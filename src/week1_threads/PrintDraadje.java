@@ -22,7 +22,7 @@ public class PrintDraadje implements Runnable {
 	public void run() {
 
 		while (doorgaan) {
-			System.out.print(s);
+			System.out.println(s);
 			addOne();
 			try {
 				Thread.sleep(10);
