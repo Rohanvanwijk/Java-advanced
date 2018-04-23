@@ -25,7 +25,8 @@ public class PrintDraadje implements Runnable {
 			System.out.println(s);
 			addOne();
 			try {
-				Thread.sleep(10);
+				//pauze van de draadjes
+				Thread.sleep(100);
 			} catch (InterruptedException ie) { 	} // do nothing
 		}
 		System.out.println("\n" + Thread.currentThread().getName() + " - Teller: " + teller);

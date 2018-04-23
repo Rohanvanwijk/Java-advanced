@@ -10,7 +10,7 @@ import javax.swing.JPanel;
 @SuppressWarnings("serial")
 public class StopButtonPanel extends JPanel implements ActionListener{
 
-	PrintDraadje d,e;
+	PrintDraadje d,e,f,g,h;
 	public StopButtonPanel() {
 		
 		setLayout(new GridLayout(1, 1));
@@ -19,8 +19,12 @@ public class StopButtonPanel extends JPanel implements ActionListener{
 		button.addActionListener(this);
 		add(button);
 		
+		//aantal print draadjes
 		d = new PrintDraadje("+");
 		e = new PrintDraadje("-");
+		f = new PrintDraadje("f");
+		g = new PrintDraadje("g");
+		h = new PrintDraadje("2");
 				
 		
 	}
@@ -29,6 +33,9 @@ public class StopButtonPanel extends JPanel implements ActionListener{
 
 		d.pleaseStop();
 		e.pleaseStop();
+		f.pleaseStop();
+		g.pleaseStop();
+		h.pleaseStop();
 	
 		
 	}
