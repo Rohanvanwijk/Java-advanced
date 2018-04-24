@@ -7,7 +7,7 @@ public class BoomshineApplicatie extends JFrame{
 		// TODO Auto-generated constructor stub
 		int frameWidth = 800;
 		int frameHeight = 800;
-		this.setBounds(400, 400, frameWidth, frameHeight);
+		this.setBounds(10, 10, frameWidth, frameHeight);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setTitle("Boomshine");
 	

@@ -53,7 +53,7 @@ public class Bubble extends Observable {
 		if(straal < 20) {
 			int x = middelpunt.x + getdx()*(snelheid + 4);
 			int y = middelpunt.y + getdy()*(snelheid +4);
-			
+			kleur = new Color(255, 1, 1);
 			middelpunt.setLocation(x, y);
 		}
 		int x = middelpunt.x + getdx()*snelheid;
