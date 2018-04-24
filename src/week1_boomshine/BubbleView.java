@@ -29,21 +29,22 @@ public class BubbleView extends JPanel implements Observer{
 		int mx = bubble.getMiddelpunt().x;
 		int my = bubble.getMiddelpunt().y;
 		
+		System.out.println("view: x-" + mx +":: y-" + my);
+		
 		int x = mx - straal;
 		int y = my - straal;
 
 		g.setColor(bubble.getKleur());
 		g.drawOval(x, y, straal*2, straal*2);
-		g.fillOval(x, y, straal*2, straal*2);
-		g.drawLine(mx, my, mx, my);
+		//g.fillOval(x, y, straal*2, straal*2);
+		
 	
 		
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
-		repaint();
-		
+		repaint();	
 	}
 
 }

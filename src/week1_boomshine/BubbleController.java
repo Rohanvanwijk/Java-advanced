@@ -2,8 +2,9 @@ package week1_boomshine;
 
 public class BubbleController implements Runnable {
 	Bubble buble;
-	
+	private boolean doorgaan;
 	public BubbleController(Bubble buble) {
+		doorgaan = true;
 		this.buble = buble;
 		Thread thread = new Thread(this);
 		thread.start();
@@ -11,13 +12,16 @@ public class BubbleController implements Runnable {
 
 	@Override
 	public void run() {
-		System.out.println("b1 thread");
-		buble.move();
+		while(doorgaan) {
+			buble.move();
+		
+	
 		try {
-			Thread.sleep(10);
+			Thread.sleep(50);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
 		}
 		
 	}

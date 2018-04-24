@@ -11,14 +11,17 @@ public class Bubble extends Observable {
 	private Point middelpunt;
 	private Color kleur;
 	private int straal, dx, dy;
+	private int kleurteller;
+	private int snelheid;
+	private int frameWidth;
+	private int frameHeight;
 	
-	public Bubble() {
-		// TODO Auto-generated constructor stub
+	public Bubble(int frameWidth, int frameHeight) {
+		this.frameHeight = frameHeight;
+		this.frameWidth = frameWidth;
 		init();
-		Random rnd = new Random();
-		straal = 10 + rnd.nextInt(60);
-		kleur = Color.RED;
-		middelpunt = new Point(100 + rnd.nextInt(400), 100 + rnd.nextInt(500));
+	
+	
 	}
 	
 	public Point getMiddelpunt() {
@@ -35,17 +38,68 @@ public class Bubble extends Observable {
 
 	public void init() {
 		Random rnd = new Random();
-		middelpunt = new Point(rnd.nextInt(400), rnd.nextInt(200));
-		straal = rnd.nextInt(200);
+		middelpunt = new Point(100 + rnd.nextInt(400), 100 + rnd.nextInt(500));
+		straal = 10 + rnd.nextInt(60);
+		kleur = new Color(rnd.nextInt(255), rnd.nextInt(255), rnd.nextInt(255));
+		kleurteller = 1;
+		dx = 1;
+		dy = -1;
+		snelheid = 2 + rnd.nextInt(10);
 	}
 	
 	public void move() {
-		dx *= -1;
-		dy *= -1;
-		Translate.translate(dx, dy);
+		flip();
+		
+		if(straal < 20) {
+			int x = middelpunt.x + getdx()*(snelheid + 4);
+			int y = middelpunt.y + getdy()*(snelheid +4);
+			
+			middelpunt.setLocation(x, y);
+		}
+		int x = middelpunt.x + getdx()*snelheid;
+		int y = middelpunt.y + getdy()*snelheid;
+	
+		middelpunt.setLocation(x, y);
+		
+		if(kleurteller != 255) {
+			kleur = new Color(kleurteller, 100, 20);
+		} else {
+			kleurteller = 0;
+		}
+	
+		
+		kleurteller++;
 		setChanged();
 		notifyObservers();
 		
 	}
+	
+	public int getdx() {
+		return dx;
+	}
+	
+	public int getdy() {
+		return dy;
+	}
+	
+	private void flip() {
+		if(middelpunt.x >= frameWidth || middelpunt.x <= 0) {
+			if(dx == 1) {
+				dx = -1;
+			} else {
+				dx = 1;
+			}
+		
+		}
+		if(middelpunt.y >= frameHeight || middelpunt.y <= 0) {
+			if(dy == 1) {
+				dy = -1;
+			} else {
+				dy = 1;
+			}
+		}
+	}
+	
+	
 
 }
