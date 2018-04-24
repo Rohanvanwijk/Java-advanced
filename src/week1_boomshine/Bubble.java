@@ -15,6 +15,10 @@ public class Bubble extends Observable {
 	public Bubble() {
 		// TODO Auto-generated constructor stub
 		init();
+		Random rnd = new Random();
+		straal = 10 + rnd.nextInt(60);
+		kleur = Color.RED;
+		middelpunt = new Point(100 + rnd.nextInt(400), 100 + rnd.nextInt(500));
 	}
 	
 	public Point getMiddelpunt() {
@@ -23,6 +27,10 @@ public class Bubble extends Observable {
 
 	public int getStraal() {
 		return straal;
+	}
+	
+	public Color getKleur() {
+		return kleur;
 	}
 
 	public void init() {
@@ -35,6 +43,9 @@ public class Bubble extends Observable {
 		dx *= -1;
 		dy *= -1;
 		Translate.translate(dx, dy);
+		setChanged();
+		notifyObservers();
+		
 	}
 
 }
