@@ -8,6 +8,7 @@ public class BubbleController implements Runnable {
 		this.buble = buble;
 		Thread thread = new Thread(this);
 		thread.start();
+		System.out.println(thread.getName());
 	}
 
 	@Override

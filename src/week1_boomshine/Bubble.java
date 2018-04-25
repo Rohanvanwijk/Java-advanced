@@ -11,7 +11,6 @@ public class Bubble extends Observable {
 	private Point middelpunt;
 	private Color kleur;
 	private int straal, dx, dy;
-	private int kleurteller;
 	private int snelheid;
 	private int frameWidth;
 	private int frameHeight;
@@ -41,7 +40,7 @@ public class Bubble extends Observable {
 		middelpunt = new Point(100 + rnd.nextInt(400), 100 + rnd.nextInt(500));
 		straal = 10 + rnd.nextInt(60);
 		kleur = new Color(rnd.nextInt(255), rnd.nextInt(255), rnd.nextInt(255));
-		kleurteller = 1;
+	
 		dx = 1;
 		dy = -1;
 		snelheid = 2 + rnd.nextInt(10);
@@ -60,15 +59,7 @@ public class Bubble extends Observable {
 		int y = middelpunt.y + getdy()*snelheid;
 	
 		middelpunt.setLocation(x, y);
-		
-		if(kleurteller != 255) {
-			kleur = new Color(kleurteller, 100, 20);
-		} else {
-			kleurteller = 0;
-		}
 	
-		
-		kleurteller++;
 		setChanged();
 		notifyObservers();
 		
