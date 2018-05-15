@@ -1,4 +1,4 @@
-package week1_boomshine;
+package week2_boomshine;
 
 
 import java.awt.Color;
