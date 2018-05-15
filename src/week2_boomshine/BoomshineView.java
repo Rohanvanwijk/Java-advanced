@@ -20,11 +20,13 @@ public class BoomshineView extends JPanel {
 		this.frameHeight = height;
 		
 		
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 10; i++) {
 			BubbleView b = new BubbleView(new Bubble(frameWidth, frameHeight));
 			b.setBounds(0, 0, frameWidth, frameHeight);
 			this.add(b);
 		}
+		
+		
 		
 		this.addMouseListener(new MouseListener() {
 			
@@ -33,12 +35,8 @@ public class BoomshineView extends JPanel {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				Point middelpunt = e.getPoint();
-				Bubble b = new Bubble(frameWidth, frameHeight);
-				b.setMiddelpunt(middelpunt);
-				BubbleView bv = new BubbleView(b);
-				bv.setBounds(0, 0, frameWidth, frameHeight);
+				createBuble(middelpunt);
 				System.out.println(middelpunt);
-				
 			}
 
 			@Override
@@ -70,6 +68,16 @@ public class BoomshineView extends JPanel {
 		
 		
 		
+	}
+	
+	public void createBuble(Point middelpunt) {
+		Bubble b = new Bubble(frameWidth, frameHeight);
+		b.setMiddelpunt(middelpunt);
+		b.setSnelheid(0);
+		b.setStraal(0);
+		BubbleView bv = new BubbleView(b);
+		bv.setBounds(0, 0, frameWidth, frameHeight);
+		this.add(bv);
 	}
 
 }

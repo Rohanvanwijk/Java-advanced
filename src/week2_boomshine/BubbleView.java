@@ -15,7 +15,10 @@ public class BubbleView extends JPanel implements Observer{
 		this.bubble = bubble;
 		bubble.addObserver(this);
 		this.setOpaque(false);
-		BubbleController controller = new BubbleController(this.bubble);
+		if(bubble.getSnelheid() == 0) {
+			System.out.println("groei controlller!!!");
+			GroeiController gc = new GroeiController(bubble);
+		} BubbleController controller = new BubbleController(this.bubble);
 		
 	}
 	
