@@ -2,6 +2,9 @@ package week2_boomshine;
 
 
 import java.awt.Color;
+import java.awt.Point;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -22,6 +25,47 @@ public class BoomshineView extends JPanel {
 			b.setBounds(0, 0, frameWidth, frameHeight);
 			this.add(b);
 		}
+		
+		this.addMouseListener(new MouseListener() {
+			
+			
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				Point middelpunt = e.getPoint();
+				Bubble b = new Bubble(frameWidth, frameHeight);
+				b.setMiddelpunt(middelpunt);
+				BubbleView bv = new BubbleView(b);
+				bv.setBounds(0, 0, frameWidth, frameHeight);
+				System.out.println(middelpunt);
+				
+			}
+
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		
 		
 		

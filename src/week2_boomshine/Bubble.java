@@ -22,6 +22,10 @@ public class Bubble extends Observable {
 	
 	}
 	
+	public void setMiddelpunt(Point middelpunt) {
+		this.middelpunt = middelpunt;
+	}
+	
 	public Point getMiddelpunt() {
 		return middelpunt;
 	}

@@ -1,6 +1,5 @@
 package week2_boomshine;
 
-import week1_boomshine.Bubble;
 
 public class BubbleController implements Runnable {
 	Bubble buble;

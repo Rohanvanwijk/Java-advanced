@@ -15,7 +15,7 @@ public class BubbleView extends JPanel implements Observer{
 		this.bubble = bubble;
 		bubble.addObserver(this);
 		this.setOpaque(false);
-		BubbleController controller = new BubbleController(bubble);
+		BubbleController controller = new BubbleController(this.bubble);
 		
 	}
 	
