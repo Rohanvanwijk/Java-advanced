@@ -21,9 +21,10 @@ public class BoomshineView extends JPanel {
 		
 		
 		for (int i = 0; i < 10; i++) {
-			BubbleView b = new BubbleView(new Bubble(frameWidth, frameHeight));
-			b.setBounds(0, 0, frameWidth, frameHeight);
-			this.add(b);
+			Bubble b = new Bubble(frameWidth, frameHeight);
+			BubbleView bv = new BubbleView(b);
+			bv.setBounds(0, 0, frameWidth, frameHeight);
+			this.add(bv);
 		}
 		
 		

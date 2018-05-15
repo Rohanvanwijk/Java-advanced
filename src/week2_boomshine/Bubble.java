@@ -17,6 +17,7 @@ public class Bubble extends Observable {
 		this.frameHeight = frameHeight;
 		this.frameWidth = frameWidth;
 		init();
+		
 
 	}
 
@@ -78,6 +79,13 @@ public class Bubble extends Observable {
 		setChanged();
 		notifyObservers();
 
+	}
+
+	public boolean botstMet(Bubble b) {
+		int afstX = b.middelpunt.x - this.middelpunt.x;
+		int afstY = b.middelpunt.y - this.middelpunt.y;
+		int stralenSom = b.straal + this.straal;
+		return (afstX * afstX + afstY * afstY) < stralenSom * stralenSom;
 	}
 
 	private int getdx() {
