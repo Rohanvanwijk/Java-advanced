@@ -12,14 +12,14 @@ public class Main {
 	
 
 	public Main() {
-		// TODO Auto-generated constructor stub
+		// TODO Auto-generated constructor stub, rohan is cool
 	}
 
 	public static void main(String[] args) {
 		int teller = 0;
 		String[] advice = {"The way get started is to quit talking and begin doing.", 
 							"The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty.", 
-							"Don’t let yesterday take up too much of today.", 
+							"Donï¿½t let yesterday take up too much of today.", 
 							"Leaders are never satisfied; they continually strive to be better.",
 							"hahaha"};
 		try {
