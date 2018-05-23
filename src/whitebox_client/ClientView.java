@@ -8,8 +8,16 @@ import javax.swing.JFrame;
 public class ClientView extends JFrame implements Observer{
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		String adres = "localost";
+		int port = 7171;
+		String name = "linux";
+		
 
+	}
+	
+	public ClientView(String adres, int port, String name) {
+		Client client = new Client(adres, port, name);
+		client.addObserver(this);
 	}
 
 	@Override

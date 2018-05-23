@@ -1,12 +1,11 @@
 package whitebox_client;
 
-import java.io.IOException;
+
 import java.io.ObjectOutputStream;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
+import java.util.Observable;
+
 
 public class Client extends Observable {
 	private Socket socket;
