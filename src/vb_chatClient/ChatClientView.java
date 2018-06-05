@@ -26,7 +26,7 @@ public class ChatClientView extends JFrame implements Observer
     {
         String address = "localhost";
         int port = 4242;
-        String name = "jan";
+        String name = "rohan";
         new ChatClientView( address, port, name );
     }
 
