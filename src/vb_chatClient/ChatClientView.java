@@ -38,7 +38,7 @@ public class ChatClientView extends JFrame implements Observer
 
         SendController controller = new SendController( client, this);
         
-        maakGUI(client.getName(), controller );
+        maakGUI(client.getName(), controller);
 
     }
     

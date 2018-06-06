@@ -4,7 +4,7 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-public class WhiteboardMessage
+public class WhiteboardMessage extends ServerMessage
 {
 
     protected ImageIcon image;
@@ -19,4 +19,10 @@ public class WhiteboardMessage
     {
         return image.getImage();
     }
+
+	@Override
+	public Message asTextMessage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

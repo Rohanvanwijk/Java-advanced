@@ -1,31 +1,29 @@
-package vb_chatClient;
-
-
+package whitebox_client;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.Socket;
 
-import vb_shared.TextMessage;
-import whitebox_client.Client;
+import whitebox_shared.WhiteboardMessage;
+
 
 public class IncommingReader implements Runnable
 {
     private ObjectInputStream reader;
-    private ChatClient client;
+    private Client client;
     
-    public IncommingReader( Socket socket, ChatClient client )
+    public IncommingReader(Socket socket, Client c)
     {
-        this.client = client;
+        this.client = c;
         try
         {
-            reader = new ObjectInputStream( socket.getInputStream() );
+            reader = new ObjectInputStream(socket.getInputStream());
         }
         catch ( IOException e )
         {
             e.printStackTrace();
         }
-        new Thread( this ).start();
+        new Thread(this).start();
     }
 
     @Override
@@ -36,12 +34,12 @@ public class IncommingReader implements Runnable
         {
             while ( ( object = reader.readObject() ) != null)
             {
-                if ( object instanceof TextMessage )
+                if ( object instanceof WhiteboardMessage )
                 {
-                    TextMessage message = (TextMessage) object;
+                    WhiteboardMessage message = (WhiteboardMessage) object;
                     System.out.println( message );
-                    client.addIncomming( message );
-                
+                    client.addIncomming(message);
+                    
                 }
                 else 
                     System.out.println( "illegal message type: " + object.getClass().getSimpleName()  );

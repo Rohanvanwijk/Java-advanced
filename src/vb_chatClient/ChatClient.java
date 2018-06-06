@@ -54,10 +54,10 @@ public class ChatClient extends Observable
         }
     }
 
-    public void addIncomming( TextMessage message )
+    public void addIncomming(TextMessage message)
     {
         setChanged();
-        notifyObservers( message );
+        notifyObservers(message);
     }
 
     public String getName()

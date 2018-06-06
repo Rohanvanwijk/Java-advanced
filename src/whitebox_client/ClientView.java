@@ -6,6 +6,7 @@ import java.util.Observer;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
+import vb_shared.TextMessage;
 import whitebox_shared.WhiteboardMessage;
 
 public class ClientView extends JFrame implements Observer{
@@ -31,18 +32,17 @@ public class ClientView extends JFrame implements Observer{
 		setBounds(100, 100, 640, 640);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		WhiteboardMessage m = client.getMessage();
-		
-		IconPanel panel = new IconPanel(m);
-		this.add(panel);
-		
 		setVisible(true);
 	}
 
-	@Override
-	public void update(Observable o, Object arg) {
-		// TODO Auto-generated method stub
-		
-	}
+	   @Override
+	    public void update( Observable o, Object object )
+	    {
+	        if (object instanceof WhiteboardMessage)
+	        {
+	            WhiteboardMessage message = (WhiteboardMessage)object;
+	            System.out.println(message.toString());
+	        }
+	    }
 
 }
