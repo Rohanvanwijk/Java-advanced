@@ -30,7 +30,7 @@ public class InitialMessage extends ClientMessage
     @Override
     public Message asTextMessage()
     {
-        return new TextMessage(sender, "entered");
+        return new TextMessage(this.sender, "entered");
     }
 
 }
